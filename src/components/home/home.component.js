@@ -6,12 +6,7 @@ class Home extends React.Component {
     return (
       <>
         <Row>
-          <Col md={4} sm={12}>
-            Sidebar
-          </Col>
-          <Col md={12} sm={12}>
-            Posts
-          </Col>
+          <Col md={12}>Home Component</Col>
         </Row>
       </>
     );

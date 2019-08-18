@@ -1,32 +1,37 @@
 import React, { Component } from "react";
-import { Accordion, Card, Button } from "react-bootstrap";
+import { Row, Col, Accordion, Card, Button } from "react-bootstrap";
+import FilterBy from "./../../selector/filterBy.component";
+import { YEARS } from "./../../common/static/years";
+
+import "./sidebar.css";
 
 class Sidebar extends Component {
   state = {};
   render() {
     return (
-      <Accordion>
-        <Card>
-          <Card.Header>
-            <Accordion.Toggle as={Button} variant="link" eventKey="0">
-              Click me!
-            </Accordion.Toggle>
-          </Card.Header>
-          <Accordion.Collapse eventKey="0">
-            <Card.Body>Hello! I'm the body</Card.Body>
-          </Accordion.Collapse>
-        </Card>
-        <Card>
-          <Card.Header>
-            <Accordion.Toggle as={Button} variant="link" eventKey="1">
-              Click me!
-            </Accordion.Toggle>
-          </Card.Header>
-          <Accordion.Collapse eventKey="1">
-            <Card.Body>Hello! I'm another body</Card.Body>
-          </Accordion.Collapse>
-        </Card>
-      </Accordion>
+      <>
+        <Row>
+          <Col md={12}>Filters</Col>
+        </Row>
+        <Row className="filterAccordian">
+          <Col md={12}>
+            <Accordion>
+              <Card>
+                <Card.Header>
+                  <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                    Click me!
+                  </Accordion.Toggle>
+                </Card.Header>
+                <Accordion.Collapse eventKey="0">
+                  <Card.Body className="filterBy">
+                    <FilterBy list={YEARS} />
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
+            </Accordion>
+          </Col>
+        </Row>
+      </>
     );
   }
 }
