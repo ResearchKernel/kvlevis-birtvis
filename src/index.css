@@ -1,7 +1,6 @@
 html,
 body,
 #app {
-    height: auto;
     min-height: 100%;
 }
 

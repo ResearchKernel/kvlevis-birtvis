@@ -1,12 +1,14 @@
 import React from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
-import Home from "./components/home/home.component";
-import Login from "./components/auth/login.component";
-import Papers from "./components/papers/papers.component";
-import { isLoggedIn } from "./_actions/auth.action";
 import { Container } from "react-bootstrap";
-
+import { Redirect, Route, Switch } from "react-router-dom";
+import Login from "./components/auth/login.component";
+import Home from "./components/home/home.component";
+import Papers from "./components/papers/papers.component";
+import About from "./components/staticPages/about.component";
 import "./index.css";
+import { isLoggedIn } from "./_actions/auth.action";
+import Community from "./components/staticPages/community.component";
+import Team from "./components/staticPages/team.component";
 
 const App = () => (
   <Container>
@@ -38,6 +40,27 @@ const App = () => (
           ) : (
             <Login {...routerProps} />
           );
+        }}
+      />
+      <Route
+        exact
+        path="/about"
+        render={routerProps => {
+          return <About {...routerProps} />;
+        }}
+      />
+      <Route
+        exact
+        path="/community"
+        render={routerProps => {
+          return <Community {...routerProps} />;
+        }}
+      />
+      <Route
+        exact
+        path="/team"
+        render={routerProps => {
+          return <Team {...routerProps} />;
         }}
       />
     </Switch>
