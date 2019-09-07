@@ -1,0 +1,16 @@
+.header-container {
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.header-item {
+  margin: 5px;
+  font-size: 15px;
+  padding: 5px;
+  white-space: nowrap;
+  text-decoration: none;
+}
