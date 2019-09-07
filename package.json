@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
+    "css-waves": "^0.2.1",
     "holderjs": "^2.9.6",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",

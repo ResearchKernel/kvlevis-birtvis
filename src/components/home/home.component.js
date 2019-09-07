@@ -1,13 +1,15 @@
 import React from "react";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Container } from "react-bootstrap";
+import SearchContainer from "../search/search.component";
 
 class Home extends React.Component {
   render() {
     return (
       <>
-        <Row>
-          <Col md={12}>Home Component</Col>
-        </Row>
+        <SearchContainer />
+        <Container style={{ height: "5000px" }}>
+          Home Component
+        </Container>
       </>
     );
   }
