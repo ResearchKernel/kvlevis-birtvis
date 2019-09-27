@@ -8,10 +8,10 @@ export default {
       path: '/auth/login',
       component: <Login />,
     },
-    papers: {
-      title: 'Home | ResearchKernel',
-      path: '/papers',
-      component: <Home />,
-    },
+    // papers: {
+    //   title: 'Kafka Admin',
+    //   path: '/kafka-admin',
+    //   component: <Home />,
+    // },
   },
 };
