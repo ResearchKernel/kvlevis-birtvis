@@ -1,9 +1,9 @@
 import React from "react";
-import { Row, Col } from "react-bootstrap";
 import { Layout, Menu, Icon } from "antd";
 import "./home.css";
 
 const { Header, Sider, Content } = Layout;
+const { SubMenu } = Menu;
 
 class Home extends React.Component {
   state = {
@@ -25,6 +25,20 @@ class Home extends React.Component {
               <Icon type="user" />
               <span>Kafka</span>
             </Menu.Item>
+            <SubMenu
+              key="sub1"
+              title={
+                <span>
+                  <Icon type="mail" />
+                  <span>Navigation One</span>
+                </span>
+              }
+            >
+              <Menu.Item key="5">Option 5</Menu.Item>
+              <Menu.Item key="6">Option 6</Menu.Item>
+              <Menu.Item key="7">Option 7</Menu.Item>
+              <Menu.Item key="8">Option 8</Menu.Item>
+            </SubMenu>
             <Menu.Item key="2">
               <Icon type="video-camera" />
               <span>Hive</span>
