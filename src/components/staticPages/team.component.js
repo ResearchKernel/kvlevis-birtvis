@@ -3,14 +3,14 @@ import { Row, Col, CardDeck, ListGroup, Card } from "react-bootstrap";
 
 const team = () => {
   return (
-    <>
+    <div style={{ paddingTop: "50px" }}>
       <Row>
         <Col md={{ span: 12, offset: 0 }}>Header Component</Col>
       </Row>
       <Row>
         <Col md={{ span: 8, offset: 2 }}>
           <h3>What are we solving at Researchkernel? </h3>
-          <p>
+          <p style={{ color: "black" }}>
             At Researchkernel we have a small team working in big ideas and
             developemnt challenges in Cloud Deployment, System Archicture,
             Machine Learning, Data Science and DevOps Domains. We all are
@@ -28,6 +28,8 @@ const team = () => {
                 <Card.Img
                   variant="top"
                   src="https://media.licdn.com/dms/image/C5103AQEwNp5wuqWmWQ/profile-displayphoto-shrink_200_200/0?e=1570665600&v=beta&t=EyQoYRkeinGNj5pEbn9Y2XhjsDQBtpJpb6y--Nl22IA"
+                  height="200px"
+                  width="200px"
                 />
                 <Card.Body>
                   <Card.Title>
@@ -117,7 +119,7 @@ const team = () => {
         <br />
       </Row>
       <br />
-    </>
+    </div>
   );
 };
 

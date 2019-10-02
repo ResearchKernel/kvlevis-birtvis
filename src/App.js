@@ -9,6 +9,7 @@ import "./index.css";
 import { isLoggedIn } from "./_actions/auth.action";
 import Community from "./components/staticPages/community.component";
 import Team from "./components/staticPages/team.component";
+import JoinUs from "./components/staticPages/joinus.component";
 import Header from "./components/header/header.component";
 
 const App = () => (
@@ -63,6 +64,13 @@ const App = () => (
         path="/team"
         render={routerProps => {
           return <Team {...routerProps} />;
+        }}
+      />
+      <Route
+        exact
+        path="/joinus"
+        render={routerProps => {
+          return <JoinUs {...routerProps} />;
         }}
       />
     </Switch>
