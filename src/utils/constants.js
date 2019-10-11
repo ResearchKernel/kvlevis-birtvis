@@ -1,10 +1,10 @@
-export default {
-  "API": {
-    "v1": {
-      "GET_TOPICS": "/get-topics",
-      "DESCRIBE_TOPICS": "/describe-topics",
-      "GET_CONSUMER_GROUPS": "/get-consumer-groups",
-      "DESCRIBE_CONSUMER_GROUPS": "/describe-consumer-groups"
-    }
+const BASE_URL = "http://localhost:3004/PB_DATAPIPE_ADMIN";
+
+module.exports = {
+  API: {
+    GET_TOPICS: BASE_URL + "/get-topics",
+    DESCRIBE_TOPICS: BASE_URL + "/describe-topics",
+    GET_CONSUMER_GROUPS: BASE_URL + "/get-consumer-groups",
+    DESCRIBE_CONSUMER_GROUPS: BASE_URL + "/describe-consumer-groups"
   }
 };
