@@ -11,7 +11,11 @@ import {
   message
 } from "antd";
 import CreateTopicModalContent from "../modal_views/CreateTopicModalContent";
-import { describeTopics, createTopics } from "../../../_actions/topics.action";
+import {
+  describeTopics,
+  createTopics,
+  deleteTopics
+} from "../../../_actions/topics.action";
 
 const EditableContext = React.createContext();
 
@@ -186,6 +190,7 @@ class EditableTable extends React.Component {
   handleDelete = record => {
     const dataSource = [...this.state.dataSource];
     // ## handle delete
+    this.props.dispatch(deleteTopics([record.name]));
     this.setState(
       {
         dataSource: dataSource.filter(item => item.name !== record.name)
