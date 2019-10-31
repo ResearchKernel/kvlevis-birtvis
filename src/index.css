@@ -68,3 +68,11 @@ a {
   flex-flow: row nowrap;
   align-items: center;
 }
+
+.ant-table {
+  background: #fff;
+}
+
+.ant-table-thead {
+  background: #f7f7f7;
+}

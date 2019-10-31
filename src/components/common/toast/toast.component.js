@@ -1,10 +1,7 @@
-import React, { Component } from "react";
+import { message } from "antd";
 
-class Toast extends Component {
-  state = {};
-  render() {
-    return <div>Toast Component</div>;
-  }
-}
-
-export default Toast;
+message.config({
+  top: 100,
+  duration: 2,
+  maxCount: 3
+});

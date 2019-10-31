@@ -28,7 +28,7 @@ class Login extends React.Component {
         login({ email: this.state.email, password: this.state.password })
       )
       .then(() => {
-        this.props.history.push("/");
+        this.props.history.push("/kafka/producers");
         // ## data.
       })
       .catch(() => {});

@@ -7,7 +7,7 @@ import HiveView from "./../../views/hive/HiveView";
 // sub_components
 import ProducerView from "./../../views/kafka/sub_components/ProducerView";
 import ConsumerView from "./../../views/kafka/sub_components/ConsumerView";
-import TopicsView from "./../../views/kafka/sub_components/TopicsView";
+import TopicsView from "../../views/kafka/sub_components/TopicsView";
 import MetricsView from "./../../views/kafka/sub_components/MetricsView";
 
 import "./home.css";
@@ -173,10 +173,10 @@ class Home extends React.Component {
           </Header>
           <Content
             style={{
-              margin: "24px 16px",
-              padding: 24,
-              background: "#fff",
-              minHeight: 280
+              // margin: "24px 16px",
+              padding: 24
+              // background: "#fff",
+              // minHeight: "100%"
             }}
           >
             <Switch>

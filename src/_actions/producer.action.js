@@ -1,10 +1,11 @@
+import { API } from "../utils/constants";
+import axios from "axios";
+
 export function getProducers(payload) {
   return dispatch => {
     return dispatch({
       type: "GET_PRODUCERS",
-      // ## Change here to API call
-      // payload: axios.post(CONSTANTS.*)
-      payload: Promise.resolve(true)
+      payload: axios.get(API.GET_PRODUCERS)
     })
       .then(response => {
         return Promise.resolve(response);
