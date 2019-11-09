@@ -1,0 +1,44 @@
+.rk-navbar {
+    /* height: 64px; */
+    justify-content: space-between;
+    /* box-shadow: 0px 13px 48px rgba(255, 225, 235, 0.2); */
+    /* margin: 1rem auto; */
+    /* background: #090909; */
+    /* border-radius: 4px; */
+}
+
+.rk-navbar,
+.rk-navbar  .rk-navbar__group,
+.rk-navbar  .rk-navbar__group > *,
+.rk-links {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.rk-links .mrg1 {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.mrg1 {
+    /* margin: 0.5rem; */
+    padding: 10px;
+    height: 64px;
+}
+
+.rk-navbar a, .rk-navbar a:hover, .rk-navbar a:active, .rk-navbar a:focus {
+    text-decoration: none;
+    color: inherit;
+    text-shadow: 0 5px 4px rgba(0,0,0,0.80), 0 3px 5px rgba(0,0,0,0.52);
+}
+
+.rk-navbar a:hover, .rk-navbar a:active, .rk-navbar a:focus {
+    cursor: pointer;
+    -webkit-transition: all 500ms ease-out;
+    -moz-transition: all 500ms ease-out;
+    -o-transition: all 500ms ease-out;
+    transition: all 500ms ease-out;
+    color: #f9f9f9;
+}
