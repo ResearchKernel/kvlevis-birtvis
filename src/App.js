@@ -9,16 +9,16 @@ import { Container } from "react-bootstrap";
 import "./index.css";
 
 const App = () => (
-  <Container>
-    <Switch>
-      <Route
-        exact
-        path="/"
-        render={routerProps => {
-          return <Home {...routerProps} />;
-        }}
-      />
-      <Route
+  // <Container>
+  <Switch>
+    <Route
+      exact
+      path="/"
+      render={routerProps => {
+        return <Home {...routerProps} />;
+      }}
+    />
+    {/* <Route
         exact
         path="/papers"
         render={routerProps => {
@@ -28,19 +28,19 @@ const App = () => (
             <Redirect to="/login" />
           );
         }}
-      />
-      <Route
-        exact
-        path="/login"
-        render={routerProps => {
-          return isLoggedIn() ? (
-            <Redirect to="/" />
-          ) : (
+      /> */}
+    <Route
+      exact
+      path="/login"
+      render={routerProps => {
+        return isLoggedIn() ? (
+          <Redirect to="/" />
+        ) : (
             <Login {...routerProps} />
           );
-        }}
-      />
-    </Switch>
-  </Container>
+      }}
+    />
+  </Switch>
+  // </Container>
 );
 export default App;

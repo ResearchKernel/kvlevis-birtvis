@@ -1,0 +1,17 @@
+.rk-header {
+    /* background: url("https://researchkernel-assets.s3.ap-south-1.amazonaws.com/assets/2862625.jpg"); */
+    /* background: url("https://researchkernel-assets.s3.ap-south-1.amazonaws.com/assets/banner-2000x20000.jpg"); */
+    background: url("https://yculz33w9skgdkhey8rajqm6-wpengine.netdna-ssl.com/wp-content/uploads/2018/09/blog-banner-mark-data-lake-data-mart.jpg");
+    background-size: cover;
+    color: #fff;
+    height: 400px;
+    /* object-fit: contain; */
+    /* max-height: 100%;
+    max-width: 100%; */
+}
+
+.rk-content {
+    /* height: 600px; */
+    padding-top: 48px;
+    padding-bottom: 24px;
+}
