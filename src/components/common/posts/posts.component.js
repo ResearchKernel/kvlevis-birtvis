@@ -1,27 +1,25 @@
-import React from "react";
-import { connect } from "react-redux";
+import React, { Component } from "react";
 import { Row, Col } from "antd";
-import { Switch, Route } from "react-router-dom";
-import Navbar from "../common/navbar/navbar.component";
-import HeaderJumbo from "../common/header-jumbo/header-jumbo.component";
+import { connect } from "react-redux";
+import Navbar from "../navbar/navbar.component";
+import HeaderJumbo from "../header-jumbo/header-jumbo.component";
 import { Container } from "react-bootstrap";
-import Sidebar from "../common/sidebar/sidebar.component";
-import CategoriesList from "../common/categories_list/categories_lists.component";
-import "./home.css";
+import Sidebar from "../sidebar/sidebar.component";
+import ListPapers from "../../list_papers/list_papers.component";
 
 @connect(store => {
   return {
-    headerImage: store.headerImage.url
+    headerImage: store.headerImage.url,
+    papers: store.papers
   };
 })
-class Home extends React.Component {
+export default class Posts extends Component {
   constructor(props) {
     super(props);
     this.state = {
       headerImage: ""
     };
   }
-
   // componentWillReceiveProps(nextProps) {
   //   if (this.state.headerImage !== nextProps.headerImage) {
   //     this.setState({
@@ -32,11 +30,10 @@ class Home extends React.Component {
 
   componentDidMount() {
     // ## default header image set
-    this.setState({ headerImage: this.props.headerImage });
+    // this.setState({ headerImage: this.props.headerImage });
   }
-
   render() {
-    const { headerImage } = this.state;
+    const { headerImage } = this.props;
     return (
       <>
         <Row
@@ -60,21 +57,9 @@ class Home extends React.Component {
               <Sidebar />
             </Col>
             <Col md={18} sm={24}>
-              <Switch>
-                <Route
-                  exact
-                  path="/"
-                  render={routerProps => {
-                    return <CategoriesList {...routerProps} />;
-                  }}
-                />
-                <Route
-                  path="/categories/:category"
-                  render={routerProps => {
-                    return <Posts {...routerProps} />;
-                  }}
-                />
-              </Switch>
+              {this.props.location.pathname.split("/")[2]}
+              {/* ## Posts */}
+              <ListPapers papers={this.props.papers} {...this.props} />
             </Col>
           </Row>
         </Container>
@@ -82,5 +67,3 @@ class Home extends React.Component {
     );
   }
 }
-
-export default Home;

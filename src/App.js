@@ -2,14 +2,12 @@ import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Home from "./components/home/home.component";
 import Login from "./components/auth/login.component";
-import Papers from "./components/papers/papers.component";
 import { isLoggedIn } from "./_actions/auth.action";
-import { Container } from "react-bootstrap";
+import Posts from "./components/common/posts/posts.component";
 
 import "./index.css";
 
 const App = () => (
-  // <Container>
   <Switch>
     <Route
       exact
@@ -18,29 +16,20 @@ const App = () => (
         return <Home {...routerProps} />;
       }}
     />
-    {/* <Route
-        exact
-        path="/papers"
-        render={routerProps => {
-          return isLoggedIn() ? (
-            <Papers {...routerProps} />
-          ) : (
-            <Redirect to="/login" />
-          );
-        }}
-      /> */}
+    <Route
+      path="/categories/:category"
+      render={routerProps => {
+        return <Posts {...routerProps} />;
+      }}
+    />
     <Route
       exact
       path="/login"
       render={routerProps => {
-        return isLoggedIn() ? (
-          <Redirect to="/" />
-        ) : (
-            <Login {...routerProps} />
-          );
+        return isLoggedIn() ? <Redirect to="/" /> : <Login {...routerProps} />;
       }}
     />
   </Switch>
-  // </Container>
 );
+
 export default App;

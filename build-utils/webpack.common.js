@@ -1,30 +1,30 @@
-const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const aliyunTheme = require('@ant-design/aliyun-theme');
+const path = require("path");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const aliyunTheme = require("@ant-design/aliyun-theme");
 
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   module: {
     rules: [
       {
         test: /\.less$/,
         use: [
           {
-            loader: 'style-loader',
+            loader: "style-loader"
           },
           {
-            loader: 'css-loader',
+            loader: "css-loader"
           },
           {
-            loader: 'less-loader',
+            loader: "less-loader",
             options: {
               modifyVars: {
                 // ...aliyunTheme,
-                'primary-color': '#000',
+                "primary-color": "#000"
               },
-              javascriptEnabled: true,
+              javascriptEnabled: true
             }
           }
         ]
@@ -33,48 +33,62 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         // use: ['babel-loader', 'eslint-loader'],
-        use: ['babel-loader'],
+        use: ["babel-loader"]
       },
       {
         test: /\.(png|jp(e*)g|svg)$/,
-        use: [{
-          loader: 'url-loader',
-          options: {
-            limit: 8000, // Convert images < 8kb to base64 strings
-            name: 'images/[hash]-[name].[ext]'
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 8000, // Convert images < 8kb to base64 strings
+              name: "images/[hash]-[name].[ext]"
+            }
           }
-        }]
+        ]
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: ["style-loader", "css-loader"]
       },
       {
         test: /\.s[ac]ss$/i,
         use: [
           // Creates `style` nodes from JS strings
-          'style-loader',
+          "style-loader",
           // Translates CSS into CommonJS
-          'css-loader',
+          "css-loader",
           // Compiles Sass to CSS
-          'sass-loader',
-        ],
+          "sass-loader"
+        ]
       },
-    ],
+      // Font files
+      {
+        test: /\.(woff|woff2|ttf|otf)$/,
+        loader: "file-loader",
+        include: [/fonts/],
+
+        options: {
+          name: "[hash].[ext]",
+          outputPath: "css/",
+          publicPath: url => "../css/" + url
+        }
+      }
+    ]
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ["*", ".js", ".jsx"]
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Advanced React with Webpack Setup',
-      template: './src/index.html',
-    }),
+      title: "Advanced React with Webpack Setup",
+      template: "./src/index.html"
+    })
   ],
   output: {
-    path: path.resolve(__dirname, '../', 'dist'),
-    publicPath: '/',
-    filename: 'bundle.js',
-  },
+    path: path.resolve(__dirname, "../", "dist"),
+    publicPath: "/",
+    filename: "bundle.js"
+  }
 };

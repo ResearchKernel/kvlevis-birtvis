@@ -1,7 +1,3 @@
-.rk-categories {
-    
-}
-
 .rk-categories .ant-col {
     position: relative;
 }
@@ -19,6 +15,7 @@
     color: #fff;
     cursor: pointer;
     text-align: center;
+    text-transform: uppercase;
 }
 
 .dfffrnwjccaic {
